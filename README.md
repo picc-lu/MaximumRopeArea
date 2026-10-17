@@ -8,8 +8,7 @@ Given **n** pieces of perfectly flexible, inextensible soft rope, each of length
 ## 🌐 Live Website
 
 The project is hosted via GitHub Pages. You can view the latest best-known configurations here:
-**[https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/](https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/)**
-*(Please replace the URL with your actual GitHub Pages link)*
+**[https://picc-lu.github.io/MaximumRopeArea/](https://picc-lu.github.io/MaximumRopeArea/)**
 
 ## 🤝 How to Contribute
 
