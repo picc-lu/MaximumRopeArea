@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximum Rope Area</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Maximum Rope Area</h1>
+<p class="subtitle">How much area can <em>n</em> unit-length soft ropes enclose?</p>
+
+<p>
+  You are given <strong><em>n</em></strong> pieces of perfectly flexible, inextensible soft rope,
+  each of length <strong>1</strong>. You may arrange the ropes in any way you like to enclose the largest possible total area.
+</p>
+
+<h2>Rules</h2>
+<ul class="rules">
+  <li>Each rope has length <strong>1</strong> and cannot be stretched.</li>
+  <li>Ropes are perfectly flexible and can be bent into any shape or tied together end-to-end.</li>
+  <li>Ropes may not cross or overlap.</li>
+  <li>The goal is to <strong>maximize the total enclosed area</strong> using one or multiple closed loops.</li>
+</ul>
+
+<h2>Best Known Configurations</h2>
+
+<table id="rope-table">
+  <thead>
+  <tr>
+    <th>n</th>
+    <th>Exact Area</th>
+    <th>Approx. Area</th>
+    <th>Configuration</th>
+    <th>Notes / Found by</th>
+    <th>Date</th> <!-- 新增日期列 -->
+  </tr>
+  </thead>
+  <tbody id="table-body">
+  <!-- 表格内容由 JavaScript 生成 -->
+  </tbody>
+</table>
+
+<footer>
+  <p>
+    Inspired by
+    <a href="https://erich-friedman.github.io/packing/fence/" target="_blank" rel="noopener">Erich Friedman’s Maximum Fence Area</a>.
+    Hosted on GitHub Pages.
+  </p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

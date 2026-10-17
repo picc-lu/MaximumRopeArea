@@ -1,0 +1,150 @@
+:root {
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #ddd;
+    --bg: #fafafa;
+    --accent: #0066cc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    /* 将原本的 900px 修改为 1400px，让页面往两边拉伸 */
+    max-width: 1400px;
+    width: 95%; /* 加上百分比，适配不同屏幕大小 */
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+    color: #111;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+    font-size: 1.15rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem;
+}
+
+p, li {
+    font-size: 1.1rem;
+}
+
+/* 可以限制段落的宽度，防止在超宽屏下文字读起来太累 */
+p, .subtitle, ul.rules {
+    max-width: 1100px;
+}
+
+ul.rules {
+    padding-left: 1.5rem;
+    margin: 0.8rem 0;
+}
+
+ul.rules li {
+    margin-bottom: 0.6rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 1rem 1rem; /* 稍微增加左右间距，表格拉宽后更好看 */
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+th {
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+td.n {
+    font-weight: 600;
+    font-size: 1.15rem;
+    width: 3rem;
+}
+
+td.exact, td.approx {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+td.figure {
+    width: 150px; /* 稍微加宽图片列 */
+}
+
+td.figure img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+td.note {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.empty {
+    color: #aaa;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    body {
+        font-size: 16px;
+        padding: 1.5rem 1rem 3rem;
+        width: 100%; /* 手机端占满宽度 */
+    }
+    th, td {
+        padding: 0.8rem 0.4rem;
+    }
+    td.figure img {
+        max-width: 70px;
+    }
+}
