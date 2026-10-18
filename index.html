@@ -20,10 +20,30 @@
 <ul class="rules">
   <li>Each rope has length <strong>1</strong> and cannot be stretched.</li>
   <li>Rope ends cannot be left dangling; every end must be connected to another rope end, attach to the same rope, or rest on another rope.</li>
-  <li>Ropes may not cross or overlap.</li>
+  <li>Ropes may touch or overlap one another, but they cannot cross through each other (no transverse intersection).</li>
   <li>The maximum area of any single enclosed region cannot exceed <strong>1</strong>.</li>
   <li>The goal is to <strong>maximize the total enclosed area</strong>.</li>
 </ul>
+
+<!-- 新增：图例展示区 -->
+<div class="figure-examples">
+  <div class="example-card allowed">
+    <img src="data/touch.png" alt="Ropes touching or overlapping">
+    <div class="example-label">✔️ Allowed: Touch / Overlap</div>
+  </div>
+  <div class="example-card allowed">
+    <img src="data/end.png" alt="Rope end resting on another rope">
+    <div class="example-label">✔️ Allowed: End rests on rope</div>
+  </div>
+  <div class="example-card denied">
+    <img src="data/cross.png" alt="Ropes crossing through each other">
+    <div class="example-label">❌ Not Allowed: Cross through</div>
+  </div>
+  <div class="example-card denied">
+    <img src="data/dangling.png" alt="Dangling rope end">
+    <div class="example-label">❌ Not Allowed: Dangling end</div>
+  </div>
+</div>
 
 <h2>Best Known Configurations</h2>
 
@@ -59,7 +79,7 @@
 
   <h3>Option 2: Send an Email</h3>
   <p>If you are not familiar with GitHub, you can simply send your configuration, mathematical bounds, and images via email to:<br>
-    📧 <strong>707291056@qq.com</strong></p>
+    📧 <strong>picc_lu@sina.com / 707291056@qq.com</strong></p>
   <p>Please include:</p>
   <ul>
     <li>The number of ropes (<em>n</em>)</li>

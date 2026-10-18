@@ -237,3 +237,74 @@ a:hover {
         max-width: 100px; 
     }
 }
+
+/* =========================================
+   图例展示区样式
+   ========================================= */
+.figure-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 1100px;
+}
+
+.example-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* 占位框样式，等你放了真实图片会自动覆盖或者适应 */
+.example-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    background-color: #f0f0f0; /* 没图片时会显示灰色块 */
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    border: 2px dashed #ccc; /* 虚线提示这是占位 */
+}
+
+/* 允许的样式（绿色） */
+.example-card.allowed {
+    border-top: 4px solid #2e7d32;
+}
+.example-card.allowed .example-label {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* 不允许的样式（红色） */
+.example-card.denied {
+    border-top: 4px solid #c62828;
+}
+.example-card.denied .example-label {
+    color: #c62828;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* 手机端图例适配 */
+@media (max-width: 700px) {
+    .figure-examples {
+        justify-content: center;
+        gap: 1rem;
+    }
+    .example-card {
+        width: calc(50% - 1rem); /* 手机上一行排两个 */
+        min-width: 140px;
+        padding: 0.8rem;
+    }
+    .example-card img {
+        height: 80px;
+    }
+    .example-card .example-label {
+        font-size: 0.85rem;
+    }
+}
