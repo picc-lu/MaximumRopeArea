@@ -15,9 +15,8 @@ body {
     line-height: 1.7;
     color: var(--text);
     background: var(--bg);
-    /* 将原本的 900px 修改为 1400px，让页面往两边拉伸 */
     max-width: 1400px;
-    width: 95%; /* 加上百分比，适配不同屏幕大小 */
+    width: 95%;
     margin: 0 auto;
     padding: 3rem 1.5rem 5rem;
     font-size: 18px;
@@ -48,7 +47,6 @@ p, li {
     font-size: 1.1rem;
 }
 
-/* 可以限制段落的宽度，防止在超宽屏下文字读起来太累 */
 p, .subtitle, ul.rules {
     max-width: 1100px;
 }
@@ -71,7 +69,7 @@ table {
 
 th, td {
     text-align: left;
-    padding: 1rem 1rem; /* 稍微增加左右间距，表格拉宽后更好看 */
+    padding: 1rem 0.8rem;
     border-bottom: 1px solid var(--border);
     vertical-align: middle;
 }
@@ -96,13 +94,13 @@ td.exact, td.approx {
     white-space: nowrap;
 }
 
+/* 移除了 td.figure 的固定宽度 */
 td.figure {
-    width: 150px; /* 稍微加宽图片列 */
+    /* 单元格宽度由图片自然撑开 */
 }
 
+/* 移除了图片的 max-width 限制，保留圆角和边框 */
 td.figure img {
-    max-width: 100px;
-    height: auto;
     border-radius: 6px;
     border: 1px solid var(--border);
     display: block;
@@ -113,6 +111,12 @@ td.note {
     font-size: 1rem;
 }
 
+td.date {
+    color: var(--muted);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
 .empty {
     color: #aaa;
     font-style: italic;
@@ -120,10 +124,44 @@ td.note {
 
 footer {
     margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.95rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+    color: var(--text);
+}
+
+footer h2 {
+    margin-top: 0;
+    border-bottom: none;
+    font-size: 1.5rem;
+}
+
+footer h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+footer ol, footer ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+footer li {
+    margin-bottom: 0.4rem;
+}
+
+footer code {
+    background: #eef;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: monospace;
+}
+
+.footer-credit {
+    margin-top: 3rem;
     color: var(--muted);
+    font-size: 0.95rem;
 }
 
 a {
@@ -139,12 +177,10 @@ a:hover {
     body {
         font-size: 16px;
         padding: 1.5rem 1rem 3rem;
-        width: 100%; /* 手机端占满宽度 */
+        width: 100%;
     }
     th, td {
         padding: 0.8rem 0.4rem;
     }
-    td.figure img {
-        max-width: 70px;
-    }
+    /* 移除了移动端对图片的缩小限制 */
 }

@@ -2,7 +2,7 @@ const ropeData = [
     { n: 1, exact: "1 / (4π)", approx: "0.07958", image: "data/1.png", note: "Trivial", date: null },
     { n: 2, exact: "1 / π", approx: "0.31831", image: "data/2.png", note: "Trivial", date: null },
     { n: 3, exact: "9 / (4π)", approx: "0.71620", image: "data/3.png", note: "Trivial", date: null },
-    { n: 4,  exact: null, approx: null, image: null, note: "", date: null },
+    { n: 4,  exact: null, approx: "1.03006", image: "data/4.png", note: "Lu ZeShen", date: "2026-Oct-18" },
     { n: 5,  exact: null, approx: null, image: null, note: "", date: null },
     { n: 6,  exact: null, approx: null, image: null, note: "", date: null },
     { n: 7,  exact: null, approx: null, image: null, note: "", date: null },
