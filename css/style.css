@@ -28,6 +28,16 @@ h1 {
     color: #111;
 }
 
+.nav {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.nav a {
+    font-weight: 600;
+}
+
 .subtitle {
     color: var(--muted);
     margin-top: 0;
@@ -94,12 +104,23 @@ td.exact, td.approx {
     white-space: nowrap;
 }
 
-/* 移除了 td.figure 的固定宽度 */
-td.figure {
-    /* 单元格宽度由图片自然撑开 */
+td.history-link a {
+    font-weight: 600;
+    background: #e6f0fa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
-/* 移除了图片的 max-width 限制，保留圆角和边框 */
+td.history-link a:hover {
+    background: #d0e4f7;
+    text-decoration: none;
+}
+
+td.figure {
+    /* 不限制图片大小 */
+}
+
 td.figure img {
     border-radius: 6px;
     border: 1px solid var(--border);
@@ -120,6 +141,7 @@ td.date {
 .empty {
     color: #aaa;
     font-style: italic;
+    text-decoration: none;
 }
 
 footer {
@@ -182,5 +204,4 @@ a:hover {
     th, td {
         padding: 0.8rem 0.4rem;
     }
-    /* 移除了移动端对图片的缩小限制 */
 }
