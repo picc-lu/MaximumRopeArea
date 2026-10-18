@@ -1,14 +1,12 @@
-// 历史记录数据
+// { n: 10, exact: "", approx: "1.23456", image: "data/10.png", note: "John Doe", date: "2026-Jan-01" },
 const historyData = [
-    { n: 4, exact: "1.2000", approx: "1.20000", image: null, note: "John Doe", date: "2024-06-15" },
-    { n: 5, exact: null, approx: "1.50000", image: null, note: "Jane Smith", date: "2024-07-01" }
+
 ];
 
 (function renderHistory() {
     const tbody = document.getElementById('history-body');
     if (!tbody) return;
 
-    // 兼容解析 #n=4 和 ?n=4
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
     const searchParams = new URLSearchParams(window.location.search);
     const nParam = hashParams.get('n') || searchParams.get('n');
@@ -17,7 +15,6 @@ const historyData = [
 
     if (nParam) {
         document.getElementById('page-title').textContent = `History for n = ${nParam}`;
-        // 使用 String() 强制转换匹配
         filteredData = historyData.filter(item => String(item.n) === String(nParam));
     }
 

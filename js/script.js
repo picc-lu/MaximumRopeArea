@@ -1,7 +1,7 @@
 const ropeData = [
-    {n: 1, exact: "1 / (4π)", approx: "0.07958", image: "data/1.png", note: "Trivial", date: null, hasHistory: false},
-    {n: 2, exact: "1 / π", approx: "0.31831", image: "data/2.png", note: "Trivial", date: null, hasHistory: false},
-    {n: 3, exact: "9 / (4π)", approx: "0.71620", image: "data/3.png", note: "Trivial", date: null, hasHistory: false},
+    {n: 1, exact: "1 / (4π)", approx: "0.07958", image: "data/1.png", note: "Trivial", date: null},
+    {n: 2, exact: "1 / π", approx: "0.31831", image: "data/2.png", note: "Trivial", date: null},
+    {n: 3, exact: "9 / (4π)", approx: "0.71620", image: "data/3.png", note: "Trivial", date: null},
     {
         n: 4,
         exact: null,
@@ -20,21 +20,21 @@ const ropeData = [
         date: "2026-Oct-18",
         hasHistory: true
     },
-    {n: 6, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 7, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 8, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 9, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 10, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 11, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 12, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 13, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 14, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 15, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 16, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 17, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 18, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 19, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false},
-    {n: 20, exact: null, approx: null, image: null, note: "", date: null, hasHistory: false}
+    {n: 6, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 7, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 8, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 9, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 10, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 11, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 12, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 13, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 14, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 15, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 16, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 17, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 18, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 19, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 20, exact: null, approx: null, image: null, note: "", date: null}
 ];
 
 (function renderTable() {
@@ -88,12 +88,15 @@ const ropeData = [
         if (!item.date) tdDate.classList.add('empty');
         tr.appendChild(tdDate);
 
-        // 新增：History 列
         const tdHistory = document.createElement('td');
         tdHistory.className = 'history-link';
-        if (item.hasHistory) {
+
+        const hasHistory = typeof historyData !== 'undefined' &&
+            historyData.some(h => String(h.n) === String(item.n));
+
+        if (hasHistory) {
             const a = document.createElement('a');
-            a.href = `history.html#n=${item.n}`; // 这里改成了 #
+            a.href = `history.html#n=${item.n}`;
             a.textContent = 'View';
             tdHistory.appendChild(a);
         } else {
