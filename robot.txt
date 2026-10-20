@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /history.html
+
+Sitemap: https://picc-lu.github.io/MaximumRopeArea/sitemap.xml

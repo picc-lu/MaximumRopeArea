@@ -8,8 +8,7 @@ const ropeData = [
         approx: "1.03006",
         image: "data/4.png",
         note: "Lu ZeShen",
-        date: "2026-Oct-18",
-        hasHistory: true
+        date: "2026-Oct-18"
     },
     {
         n: 5,
@@ -17,11 +16,17 @@ const ropeData = [
         approx: "1.26969",
         image: "data/5.png",
         note: "Lu ZeShen",
-        date: "2026-Oct-18",
-        hasHistory: true
+        date: "2026-Oct-18"
     },
-    {n: 6, exact: null, approx: null, image: null, note: "", date: null},
-    {n: 7, exact: null, approx: null, image: null, note: "", date: null},
+    {n: 6, exact: "9 / (2π)", approx: "1.43239", image: "data/6.png", note: "Trivial", date: null},
+    {
+        n: 7,
+        exact: null,
+        approx: "1.74626",
+        image: "data/7.png",
+        note: "Lu ZeShen",
+        date: "2026-Oct-21"
+    },
     {n: 8, exact: null, approx: null, image: null, note: "", date: null},
     {n: 9, exact: null, approx: null, image: null, note: "", date: null},
     {n: 10, exact: null, approx: null, image: null, note: "", date: null},
