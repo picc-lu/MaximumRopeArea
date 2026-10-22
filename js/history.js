@@ -1,4 +1,4 @@
-// { n: 10, exact: "", approx: "1.23456", image: "data/10.png", note: "John Doe", date: "2026-Jan-01" },
+// { n: 10, exact: "\\frac{1}{\\pi}", approx: "1.23456", image: "data/10.png", note: "John Doe", date: "2026-Jan-01" },
 const historyData = [
 
 ];
@@ -30,8 +30,12 @@ const historyData = [
 
         const tdExact = document.createElement('td');
         tdExact.className = 'exact';
-        tdExact.textContent = item.exact !== null && item.exact !== undefined && item.exact !== '' ? item.exact : '—';
-        if (!item.exact) tdExact.classList.add('empty');
+        if (item.exact !== null && item.exact !== undefined && item.exact !== '') {
+            tdExact.innerHTML = `$${item.exact}$`;
+        } else {
+            tdExact.textContent = '—';
+            tdExact.classList.add('empty');
+        }
         tr.appendChild(tdExact);
 
         const tdApprox = document.createElement('td');
@@ -67,4 +71,9 @@ const historyData = [
 
         tbody.appendChild(tr);
     });
+
+    // 渲染完成后，告诉 MathJax 重新解析页面上的公式
+    if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise();
+    }
 })();

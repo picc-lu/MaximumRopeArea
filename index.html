@@ -17,6 +17,17 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,63 +35,64 @@
       "name": "Maximum Rope Area",
       "url": "https://picc-lu.github.io/MaximumRopeArea/",
       "description": "A mathematical exploration of the maximum area enclosed by n unit-length soft ropes.",
-      "author": {
-        "@type": "Person",
-        "name": "Lu ZeShen"
-      }
+      "author": { "@type": "Person", "name": "Lu ZeShen" }
     }
   </script>
 </head>
 <body>
 
-<h1>Maximum Rope Area</h1>
-<p class="subtitle">How much area can <em>n</em> unit-length soft ropes enclose?</p>
+<div class="header-container">
+  <h1 id="main-title">Maximum Rope Area</h1>
+  <div class="lang-switch" id="lang-toggle">
+    <div class="lang-slider"></div>
+    <span class="lang-option active" data-lang="en">EN</span>
+    <span class="lang-option" data-lang="zh">中</span>
+  </div>
+</div>
 
-<p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem;">
-  This page is dedicated to the "Maximum Rope Area" mathematical optimization problem, inspired by Erich Friedman's Maximum Fence Area. It features best-known configurations, exact mathematical bounds, and visual geometric proofs for soft ropes of length 1. We welcome contributions from mathematicians and puzzle solvers worldwide.
-</p>
+<p class="subtitle" id="subtitle-text">How much area can <em>n</em> unit-length soft ropes enclose?</p>
 
-<h2>Rules</h2>
-<ul class="rules">
+<h2 id="rules-heading">Rules</h2>
+<ul class="rules" id="rules-list">
   <li>Each rope has length <strong>1</strong> and cannot be stretched.</li>
-  <li>Rope ends cannot be left dangling; every end must be connected to another rope end, attach to the same rope, or rest on another rope.</li>
-  <li>Ropes may touch or overlap one another, but they cannot cross through each other (no transverse intersection).</li>
-  <li>The maximum area of any single enclosed region cannot exceed <strong>1</strong>.</li>
+  <li>Rope ends <strong>cannot be left dangling</strong>; every end must be connected to another rope end, attach to the same rope, or rest on another rope.</li>
+  <li>Ropes may touch or overlap one another, but they <strong>cannot cross through</strong> each other (no transverse intersection).</li>
+  <li>The maximum area of any single enclosed region <strong>cannot exceed 1</strong>.</li>
   <li>The goal is to <strong>maximize the total enclosed area</strong>.</li>
 </ul>
 
 <div class="figure-examples">
   <div class="example-card allowed">
     <img src="data/touch.png" alt="Ropes touching or overlapping">
-    <div class="example-label">✔️ Allowed: Touch / Overlap</div>
+    <div class="example-label" id="label-touch">✔️ Allowed: Touch / Overlap</div>
   </div>
   <div class="example-card allowed">
     <img src="data/end.png" alt="Rope end resting on another rope">
-    <div class="example-label">✔️ Allowed: End rests on rope</div>
+    <div class="example-label" id="label-end">✔️ Allowed: End rests on rope</div>
   </div>
   <div class="example-card denied">
     <img src="data/cross.png" alt="Ropes crossing through each other">
-    <div class="example-label">❌ Not Allowed: Cross through</div>
+    <div class="example-label" id="label-cross">❌ Not Allowed: Cross through</div>
   </div>
   <div class="example-card denied">
     <img src="data/dangling.png" alt="Dangling rope end">
-    <div class="example-label">❌ Not Allowed: Dangling end</div>
+    <div class="example-label" id="label-dangling">❌ Not Allowed: Dangling end</div>
   </div>
 </div>
 
-<h2>Best Known Configurations</h2>
+<h2 id="configs-heading">Best Known Configurations</h2>
 
 <div class="table-responsive">
   <table id="rope-table">
     <thead>
-    <tr>
-      <th>n</th>
-      <th>Exact Area</th>
-      <th>Approx. Area</th>
-      <th>Configuration</th>
-      <th>Notes / Found by</th>
-      <th>Date</th>
-      <th>History</th>
+    <tr id="table-header-row">
+      <th id="th-n">n</th>
+      <th id="th-exact">Exact Area</th>
+      <th id="th-approx">Approx. Area</th>
+      <th id="th-config">Configuration</th>
+      <th id="th-notes">Notes / Found by</th>
+      <th id="th-date">Date</th>
+      <th id="th-history">History</th>
     </tr>
     </thead>
     <tbody id="table-body">
@@ -89,25 +101,25 @@
 </div>
 
 <footer>
-  <h2>How to Contribute</h2>
-  <p>We welcome contributions of new configurations or improved exact bounds for any value of <em>n</em>!</p>
+  <h2 id="footer-contrib-title">How to Contribute</h2>
+  <p id="footer-contrib-desc">We welcome contributions of new configurations or improved exact bounds for any value of <em>n</em>!</p>
 
-  <h3>Option 1: Submit a Pull Request (Recommended)</h3>
-  <ol>
+  <h3 id="footer-opt1-title">Option 1: Submit a Pull Request (Recommended)</h3>
+  <ol id="footer-opt1-list">
     <li>Fork this repository.</li>
     <li>Add your configuration to the <code>ropeData</code> array in <code>js/script.js</code>.</li>
     <li>If you have an image (e.g., <code>10.png</code>), upload it to the <code>data/</code> folder.</li>
     <li>Commit your changes and submit a Pull Request.</li>
   </ol>
 
-  <h3>Option 2: Send an Email</h3>
-  <p>If you are not familiar with GitHub, you can simply send your configuration, mathematical bounds, and images via email to:</p>
+  <h3 id="footer-opt2-title">Option 2: Send an Email</h3>
+  <p id="footer-opt2-desc">If you are not familiar with GitHub, you can simply send your configuration, mathematical bounds, and images via email to:</p>
   <p>
-    📧 <a href="mailto:707291056@qq.com"><strong>707291056@qq.com</strong></a><br>
-    📧 <a href="mailto:picc_lu@sina.com"><strong>picc_lu@sina.com</strong></a>
+    📧 <a href="mailto:picc_lu@sina.com"><strong>picc_lu@sina.com</strong></a><br>
+    📧 <a href="mailto:707291056@qq.com"><strong>707291056@qq.com</strong></a>
   </p>
-  <p>Please include:</p>
-  <ul>
+  <p id="footer-opt2-include">Please include:</p>
+  <ul id="footer-opt2-list">
     <li>The number of ropes (<em>n</em>)</li>
     <li>The exact area (if known)</li>
     <li>The approximate area (to 5 decimal places)</li>
@@ -115,7 +127,7 @@
     <li>Any diagrams or images</li>
   </ul>
 
-  <p class="footer-credit">
+  <p class="footer-credit" id="footer-credit">
     Inspired by <a href="https://erich-friedman.github.io/packing/fence/" target="_blank" rel="noopener">Erich Friedman’s Maximum Fence Area</a>.
     Hosted on GitHub Pages.
   </p>
