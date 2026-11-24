@@ -117,12 +117,6 @@ td.exact {
     font-size: 1.3rem; /* 调大字号，让公式更大 */
 }
 
-/* 如果 1.3rem 觉得太大或太小，可以调整这个数值 */
-/* 同时为了让 MathJax 公式跟随变大，可以再加上这一段 */
-td.exact mjx-container {
-    font-size: 110% !important;
-}
-
 td.history-link a {
     font-weight: 600;
     background: #e6f0fa;
@@ -145,7 +139,6 @@ td.figure img {
     border-radius: 6px;
     border: 1px solid var(--border);
     display: block;
-    max-width: 250px; 
 }
 
 td.note {

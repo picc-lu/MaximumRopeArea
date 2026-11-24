@@ -19,15 +19,16 @@ You can submit your solution in two ways:
 ### Option 1: Submit a Pull Request (Recommended)
 1. Fork this repository.
 2. Add your configuration to the `ropeData` array in `js/script.js`.
-3. If you have an image (e.g., `4.png`), upload it to the `data/` folder.
+3. If you have an image (e.g., `10.png`), upload it to the `data/` folder.
 4. Commit your changes and submit a Pull Request. Please make sure to include your name in the `note` field so you get credit!
 
-*Example of adding a new configuration for n = 4:*
+*Example of adding a new configuration for n = 10:*
 
     { n: 10, exact: "YOUR ANSWER or null", approx: "YOUR ANSWER", image: "data/10.png", note: "[Your Name]", date: "submit date" },
 
 ### Option 2: Send an Email
 If you are not familiar with GitHub, you can simply send your configuration, mathematical bounds, and images via email to:
+📧 **picc_lu@sina.com**
 📧 **707291056@qq.com**
 
 Please include:
